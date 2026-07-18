@@ -1,4 +1,4 @@
-const map = L.map('map').setView([39.9208, 32.8541], 13);
+const map = L.map('map').setView([41.0495912, 39.2754954], 18);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap'
@@ -15,7 +15,7 @@ const heartIcon = L.divIcon({
 
 // İlk Anı
 
-L.marker([39.9208, 32.8541], {
+L.marker([41.0495912, 39.2754954], {
     icon: heartIcon
 }).addTo(map).bindPopup(`
     <div style="text-align:center;max-width:220px;">
