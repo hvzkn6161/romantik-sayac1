@@ -56,3 +56,28 @@ function changePhoto() {
 }
 
 setInterval(changePhoto, 5000);
+document.getElementById("nextPhoto").addEventListener("click", () => {
+
+    current++;
+
+    if(current >= photos.length){
+        current = 0;
+    }
+
+    img.src = photos[current].image;
+    text.innerText = photos[current].text;
+
+});
+
+document.getElementById("prevPhoto").addEventListener("click", () => {
+
+    current--;
+
+    if(current < 0){
+        current = photos.length - 1;
+    }
+
+    img.src = photos[current].image;
+    text.innerText = photos[current].text;
+
+});
