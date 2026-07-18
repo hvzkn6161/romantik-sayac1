@@ -138,24 +138,3 @@ secretModal.addEventListener("click", (e) => {
     }
 
 });
-// ❤️ Gizli kalpten çıkan minik kalpler
-
-const secretHeart = document.getElementById("secretHeart");
-
-setInterval(() => {
-
-    const miniHeart = document.createElement("span");
-
-    miniHeart.className = "mini-heart";
-
-    miniHeart.innerHTML = "❤️";
-
-    miniHeart.style.left = (45 + Math.random() * 10) + "%";
-
-    secretHeart.appendChild(miniHeart);
-
-    setTimeout(() => {
-        miniHeart.remove();
-    }, 2000);
-
-}, 500);
