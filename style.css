@@ -547,3 +547,37 @@ body{
     border-radius:10px;
     cursor:pointer;
 }
+.secret-heart{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 9999;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.15);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    75%{
+        transform: scale(1.15);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
