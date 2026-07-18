@@ -414,3 +414,39 @@ body{
 .gallery-btn:hover{
     transform:scale(1.05);
 }
+/* ========================= */
+/* TELEFON UYUMLULUĞU */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    .gallery-page{
+        padding:20px;
+    }
+
+    .gallery-title{
+        font-size:42px;
+        text-align:center;
+    }
+
+    .polaroid{
+        width:95%;
+        max-width:320px;
+        padding:12px;
+        padding-bottom:30px;
+        margin:auto;
+        transform:none;
+    }
+
+    .polaroid img{
+        width:100%;
+        height:auto;
+        aspect-ratio:3/4;
+        object-fit:cover;
+    }
+
+    .polaroid p{
+        font-size:16px;
+    }
+
+}
