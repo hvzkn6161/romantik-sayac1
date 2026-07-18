@@ -349,14 +349,14 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
     padding:40px 20px;
 }
 
 .gallery-title{
     font-family:'Great Vibes',cursive;
-    font-size:55px;
+    font-size:48px;
     color:white;
     margin-bottom:30px;
     text-shadow:0 0 20px rgba(255,255,255,.6);
@@ -365,7 +365,7 @@ body{
 .polaroid{
     background:white;
     width:90%;
-    max-width:320px;
+    max-width:280px;
     padding:12px;
     padding-bottom:30px;
     border-radius:8px;
