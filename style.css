@@ -501,3 +501,49 @@ body{
     }
 
 }
+/* ❤️ Gizli Kalp */
+#secretHeart{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#secretHeart:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Gizli Mesaj */
+.secret-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.secret-box{
+    width: 320px;
+    max-width: 90%;
+    background: #222;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,0,100,.4);
+}
+
+.secret-box button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
