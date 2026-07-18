@@ -370,14 +370,21 @@ body{
     transform:rotate(-2deg);
     transition:.8s;
 }
-
 .polaroid img{
-    width:300px;
-    height:400px;
+    width:min(90vw, 320px);
+    aspect-ratio:3/4;
     object-fit:cover;
     display:block;
+    border-radius:4px;
     transition:opacity .8s;
 }
+.polaroid{
+    max-width:340px;
+    width:90%;
+}
+
+
+
 
 .polaroid p{
     margin-top:15px;
