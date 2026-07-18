@@ -556,6 +556,16 @@ body{
     z-index: 9999;
 
     animation: heartBeat 1.5s infinite;
+
+    overflow: visible;
+}
+
+.secret-heart{
+    position: fixed;
+}
+
+.secret-heart{
+    position: relative;
 }
 
 @keyframes heartBeat{
@@ -582,7 +592,7 @@ body{
 
 }
 .mini-heart{
-    position:absolute;
+    position:fixed;
     left:50%;
     bottom:20px;
 
