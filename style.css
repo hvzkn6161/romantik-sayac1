@@ -608,3 +608,22 @@ body{
     }
 
 }
+.secret-heart.pop{
+    animation: heartPop .35s;
+}
+
+@keyframes heartPop{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.4);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
