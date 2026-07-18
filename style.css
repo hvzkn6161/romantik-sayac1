@@ -364,14 +364,19 @@ body{
 
 .polaroid{
     background:white;
-    padding:15px 15px 35px;
+    width:90%;
+    max-width:320px;
+    padding:12px;
+    padding-bottom:30px;
     border-radius:8px;
     box-shadow:0 15px 40px rgba(0,0,0,.35);
     transform:rotate(-2deg);
     transition:.8s;
+    box-sizing:border-box;
 }
 .polaroid img{
-    width:min(90vw, 320px);
+    width:100%;
+    height:auto;
     aspect-ratio:3/4;
     object-fit:cover;
     display:block;
