@@ -104,3 +104,37 @@ function createHeart(){
 }
 
 setInterval(createHeart,450);
+// ❤️ Gizli Sürpriz
+
+const secretHeart = document.getElementById("secretHeart");
+const secretModal = document.getElementById("secretModal");
+const closeSecret = document.getElementById("closeSecret");
+
+let clickCount = 0;
+
+secretHeart.addEventListener("click", () => {
+
+    clickCount++;
+
+    if(clickCount >= 5){
+
+        secretModal.style.display = "flex";
+        clickCount = 0;
+
+    }
+
+});
+
+closeSecret.addEventListener("click", () => {
+
+    secretModal.style.display = "none";
+
+});
+
+secretModal.addEventListener("click", (e) => {
+
+    if(e.target === secretModal){
+        secretModal.style.display = "none";
+    }
+
+});
