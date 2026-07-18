@@ -581,3 +581,30 @@ body{
     }
 
 }
+.mini-heart{
+    position:absolute;
+    left:50%;
+    top:10px;
+
+    transform:translateX(-50%);
+
+    font-size:14px;
+
+    animation:flyHeart 2s linear forwards;
+
+    pointer-events:none;
+}
+
+@keyframes flyHeart{
+
+    0%{
+        opacity:1;
+        transform:translate(-50%,0) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translate(-50%,-90px) scale(1.8);
+    }
+
+}
