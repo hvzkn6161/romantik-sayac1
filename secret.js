@@ -1,4 +1,11 @@
 const secretHeart = document.getElementById("secretHeart");
 
-console.log("Secret.js çalışıyor.");
-console.log(secretHeart);
+let sayac = 0;
+
+secretHeart.addEventListener("click", () => {
+
+    sayac++;
+
+    console.log("Kalbe basıldı:", sayac);
+
+});
