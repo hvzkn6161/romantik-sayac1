@@ -13,4 +13,4 @@ const heartIcon = L.divIcon({
 
 L.marker([41.049766643187475, 39.274800166012064], {
     icon: heartIcon
-}).addTo(map).bindPopup("❤️ İlk tanıştığımız yer");
+}).addTo(map).bindPopup("❤️ İlk kez buluşup oturduğumuz yer");
