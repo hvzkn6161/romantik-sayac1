@@ -343,3 +343,62 @@ body{
     transform:translateY(-3px);
     background:#ff3d74;
 }
+/* ===== Anılarımız Sayfası ===== */
+
+.gallery-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.gallery-title{
+    font-family:'Great Vibes',cursive;
+    font-size:55px;
+    color:white;
+    margin-bottom:30px;
+    text-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+.polaroid{
+    background:white;
+    padding:15px 15px 35px;
+    border-radius:8px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    transform:rotate(-2deg);
+    transition:.8s;
+}
+
+.polaroid img{
+    width:300px;
+    height:400px;
+    object-fit:cover;
+    display:block;
+    transition:opacity .8s;
+}
+
+.polaroid p{
+    margin-top:15px;
+    text-align:center;
+    font-family:'Poppins',sans-serif;
+    color:#444;
+    font-size:18px;
+}
+
+.gallery-btn{
+    margin-top:35px;
+    text-decoration:none;
+    background:#ff4f87;
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    font-family:'Poppins',sans-serif;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.gallery-btn:hover{
+    transform:scale(1.05);
+}
