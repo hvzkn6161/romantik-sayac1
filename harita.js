@@ -15,8 +15,6 @@ L.marker([41.049766643187475, 39.274800166012064], {
     icon: heartIcon
 }).addTo(map).bindPopup("❤️ İlk kez buluşup oturduğumuz yer");
 
-
-
 L.marker([41.05469776379677, 39.23060642301675], {
     icon: heartIcon
 }).addTo(map).bindPopup(`
