@@ -16,7 +16,11 @@ mini.className = "mini-heart";
     mini.style.setProperty("--x", (Math.random() * 80 - 40) + "px");
 mini.style.setProperty("--r", (Math.random() * 60 - 30) + "deg");
 
-secretHeart.appendChild(mini);
+document.body.appendChild(mini);
+    const rect = secretHeart.getBoundingClientRect();
+
+mini.style.left = (rect.left + rect.width / 2) + "px";
+mini.style.top = rect.top + "px";
 
 setTimeout(() => {
 
