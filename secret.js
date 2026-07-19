@@ -38,3 +38,12 @@ setTimeout(() => secretHeart.classList.remove("pop"), 350);
 closeSecret.addEventListener("click", () => {
     secretModal.style.display = "none";
 });
+secretModal.addEventListener("click", (e) => {
+
+    if (e.target === secretModal) {
+
+        secretModal.style.display = "none";
+
+    }
+
+});
