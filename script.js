@@ -138,3 +138,25 @@ secretModal.addEventListener("click", (e) => {
     }
 
 });
+// ❤️ Arka planda düşen kalpler
+
+function createFallingHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "falling-heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+
+}
+
+setInterval(createFallingHeart, 800);
