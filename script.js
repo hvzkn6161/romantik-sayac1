@@ -207,3 +207,28 @@ setInterval(() => {
     createShootingStar();
 
 }, 10000 + Math.random() * 10000);
+const loveReasons = [
+    "Gülüşünü seviyorum ❤️",
+    "Yanımda olmanı seviyorum 💕",
+    "Bana huzur vermeni seviyorum 🌸",
+    "Seninle konuşmayı seviyorum 💖",
+    "Beni mutlu edişini seviyorum 😊",
+    "Gözlerindeki güzelliği seviyorum ✨",
+    "İyi ki hayatımdasın ❤️",
+    "Seninle kurduğumuz hayalleri seviyorum 🌙"
+];
+
+const loveReasonBtn = document.getElementById("loveReasonBtn");
+const loveReasonText = document.getElementById("loveReasonText");
+
+if (loveReasonBtn) {
+
+    loveReasonBtn.addEventListener("click", () => {
+
+        const randomReason = Math.floor(Math.random() * loveReasons.length);
+
+        loveReasonText.innerHTML = loveReasons[randomReason];
+
+    });
+
+}
