@@ -686,4 +686,36 @@ body{
     }
 
 }
+/* 🌠 Kayan Yıldız */
 
+.shooting-star{
+    position: fixed;
+    width: 140px;
+    height: 2px;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2;
+
+    transform: rotate(-35deg);
+
+    animation: shootingStar 1s linear forwards;
+}
+
+@keyframes shootingStar{
+
+    from{
+        opacity: 0;
+        transform: translate(0,0) rotate(-35deg);
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+        transform: translate(-450px,450px) rotate(-35deg);
+    }
+
+}
