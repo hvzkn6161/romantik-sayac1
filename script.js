@@ -182,3 +182,28 @@ function createStars() {
 }
 
 createStars();
+// 🌠 Kayan yıldız
+
+function createShootingStar() {
+
+    const star = document.createElement("div");
+    star.className = "shooting-star";
+
+    // Başlangıç konumu (sağ üst taraf)
+    star.style.left = (window.innerWidth - Math.random() * 250) + "px";
+    star.style.top = (Math.random() * 200) + "px";
+
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 1000);
+
+}
+
+// 10-20 saniyede bir rastgele oluştur
+setInterval(() => {
+
+    createShootingStar();
+
+}, 10000 + Math.random() * 10000);
