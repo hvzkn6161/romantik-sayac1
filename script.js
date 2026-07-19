@@ -207,3 +207,21 @@ setInterval(() => {
     createShootingStar();
 
 }, 10000 + Math.random() * 10000);
+const loveReasons = [
+    "Gülüşünü seviyorum ❤️",
+    "Yanımda olmanı seviyorum 💕",
+    "Bana huzur vermeni seviyorum 🌸",
+    "Seninle konuşmayı seviyorum 💖",
+    "İyi ki hayatımdasın ❤️"
+];
+
+const loveReasonBtn = document.getElementById("loveReasonBtn");
+const loveReasonText = document.getElementById("loveReasonText");
+
+loveReasonBtn.addEventListener("click", function () {
+
+    const random = Math.floor(Math.random() * loveReasons.length);
+
+    loveReasonText.textContent = loveReasons[random];
+
+});
