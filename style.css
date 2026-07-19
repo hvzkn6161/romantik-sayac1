@@ -719,3 +719,58 @@ body{
     }
 
 }
+/* Kavanoz açılma animasyonu */
+
+.jar-icon.shake {
+    animation: jarShake 0.6s ease;
+}
+
+@keyframes jarShake {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    60% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+
+/* Not çıkış efekti */
+
+.love-show {
+    animation: noteShow 0.5s ease;
+}
+
+
+@keyframes noteShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
