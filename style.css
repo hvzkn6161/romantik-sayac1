@@ -655,3 +655,34 @@ body{
     }
 
 }
+/* 🌙 Gece Gökyüzü */
+
+body{
+    background: linear-gradient(to bottom, #081229, #13294b);
+    overflow-x: hidden;
+}
+
+.star{
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: twinkle 2s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1.6);
+    }
+
+}
