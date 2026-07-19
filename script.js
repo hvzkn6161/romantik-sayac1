@@ -224,6 +224,6 @@ loveReasonBtn.addEventListener("click", function () {
     console.log(random);
 console.log(loveReasons[random]);
 
-    lloveReasonText.textContent = loveReasons[random];
+    loveReasonText.textContent = loveReasons[random];
 
 });
