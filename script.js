@@ -222,26 +222,3 @@ const loveReasonBtn = document.getElementById("loveReasonBtn");
 const loveReasonText = document.getElementById("loveReasonText");
 
 if (loveReasonBtn) {
-
-    loveReasonBtn.addEventListener("click", () => {
-
-    const jar = document.querySelector(".jar-icon");
-
-    const randomReason = Math.floor(Math.random() * loveReasons.length);
-
-
-    // kavanoz sallansın
-    jar.classList.remove("shake");
-    void jar.offsetWidth;
-    jar.classList.add("shake");
-
-
-    // yazı animasyonu
-    loveReasonText.classList.remove("love-show");
-    void loveReasonText.offsetWidth;
-
-    loveReasonText.innerHTML = loveReasons[randomReason];
-
-    loveReasonText.classList.add("love-show");
-
-});
