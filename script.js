@@ -182,9 +182,3 @@ function createStars() {
 }
 
 createStars();
-// 🌙 Hilal Ay
-
-const moon = document.createElement("div");
-moon.className = "moon";
-
-document.body.appendChild(moon);
