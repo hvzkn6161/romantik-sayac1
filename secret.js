@@ -1,4 +1,6 @@
 const secretHeart = document.getElementById("secretHeart");
+const secretModal = document.getElementById("secretModal");
+const closeSecret = document.getElementById("closeSecret");
 
 let sayac = 0;
 
@@ -7,6 +9,9 @@ secretHeart.addEventListener("click", () => {
     sayac++;
 
     console.log("Kalbe basıldı:", sayac);
+    if (sayac === 5) {
+    secretModal.style.display = "flex";
+}
 secretHeart.classList.add("pop");
   const mini = document.createElement("span");
 
@@ -29,4 +34,7 @@ setTimeout(() => {
 },2000);  
 
 setTimeout(() => secretHeart.classList.remove("pop"), 350);
+});
+closeSecret.addEventListener("click", () => {
+    secretModal.style.display = "none";
 });
