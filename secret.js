@@ -30,6 +30,7 @@ secretHeart.addEventListener("click", () => {
         mini.style.setProperty("--r", (Math.random() * 360) + "deg");
 
         document.body.appendChild(mini);
+        console.log("Mini kalp oluşturuldu");
 
         setTimeout(() => {
             mini.remove();
