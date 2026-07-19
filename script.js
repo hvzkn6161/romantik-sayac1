@@ -160,3 +160,25 @@ function createFallingHeart() {
 }
 
 setInterval(createFallingHeart, 800);
+// ✨ Gece yıldızları
+
+function createStars() {
+
+    for (let i = 0; i < 70; i++) {
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+        star.style.left = Math.random() * window.innerWidth + "px";
+        star.style.top = Math.random() * window.innerHeight + "px";
+
+        star.style.animationDelay = (Math.random() * 2) + "s";
+        star.style.animationDuration = (1.5 + Math.random() * 2) + "s";
+
+        document.body.appendChild(star);
+    }
+
+}
+
+createStars();
