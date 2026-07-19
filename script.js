@@ -221,7 +221,9 @@ const loveReasonText = document.getElementById("loveReasonText");
 loveReasonBtn.addEventListener("click", function () {
 
     const random = Math.floor(Math.random() * loveReasons.length);
+    console.log(random);
+console.log(loveReasons[random]);
 
-    loveReasonText.textContent = "TEST ÇALIŞIYOR ❤️";
+    lloveReasonText.textContent = loveReasons[random];
 
 });
