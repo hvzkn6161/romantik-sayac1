@@ -774,3 +774,39 @@ body{
     }
 
 }
+/* Final Mesajı */
+
+.final-message{
+    margin-top:50px;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.final-heart{
+    font-size:55px;
+}
+
+.final-message h2{
+    font-family:'Great Vibes', cursive;
+    font-size:42px;
+    color:#ff4d88;
+    margin:15px 0;
+}
+
+.final-message p{
+    color:white;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.signature{
+    font-size:24px;
+    color:#ffd6e5;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.final-message span{
+    color:#ffd6e5;
+    font-style:italic;
+}
