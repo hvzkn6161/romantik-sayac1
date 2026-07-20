@@ -6,9 +6,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const heartIcon = L.divIcon({
     className: "heart-marker",
-    html: "❤️",
+    html: "<div>❤️</div>",
     iconSize: [40, 40],
-    iconAnchor: [20, 20]
+    iconAnchor: [20, 40]
 });
 
 L.marker([41.049766643187475, 39.274800166012064], {
