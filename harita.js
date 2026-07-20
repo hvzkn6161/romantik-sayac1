@@ -8,8 +8,19 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 // Kalp ikonu
 const heartIcon = L.divIcon({
-    html: "❤️",
-    className: "heart-marker",
+    className: "",
+    html: `
+        <div style="
+            font-size:34px;
+            width:40px;
+            height:40px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        ">
+            ❤️
+        </div>
+    `,
     iconSize: [40, 40],
     iconAnchor: [20, 20]
 });
