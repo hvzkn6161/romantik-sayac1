@@ -46,9 +46,7 @@ const firstCoffee = L.marker(
 
 firstCoffee.bindPopup(`
     <div style="text-align:center;">
-        <h3>☕ İlk Kahvemiz</h3>
-        <p>20 Haziran 2022</p>
-        <p>İlk çiçeğim 🌹</p>
+        <p>İlk çiçeğin 🌹</p>
     </div>
 `);
 
