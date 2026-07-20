@@ -796,3 +796,26 @@ body{
     letter-spacing:2px;
     color:rgba(255,255,255,.55);
 }
+/* 🎵 Müzik Butonu */
+
+#musicBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,92,138,.9);
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.3s;
+    z-index:9999;
+}
+
+#musicBtn:hover{
+    transform:scale(1.12);
+    background:#ff3f78;
+}
