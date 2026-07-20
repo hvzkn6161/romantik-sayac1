@@ -91,9 +91,9 @@ function createHeart(){
 
     heart.style.setProperty("--x",(Math.random()*120-60)+"px");
 
-    heart.style.fontSize=(14+Math.random()*16)+"px";
+    heart.style.fontSize = (10 + Math.random() * 10) + "px";
 
-    heart.style.animationDuration=(2.5+Math.random()*2)+"s";
+    heart.style.animationDuration = (3.5 + Math.random() * 2) + "s";
 
     heartBox.appendChild(heart);
 
@@ -103,7 +103,7 @@ function createHeart(){
 
 }
 
-setInterval(createHeart,450);
+setInterval(createHeart,700);
 // ❤️ Gizli Sürpriz
 
 const secretHeart = document.getElementById("secretHeart");
