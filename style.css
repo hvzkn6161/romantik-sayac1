@@ -796,4 +796,15 @@ body{
     letter-spacing:2px;
     color:rgba(255,255,255,.5);
 }
+.footer span{
+    display:block;
+    margin-top:6px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:rgba(255,255,255,.5);
+    transition:.3s;
+}
 
+.footer span:hover{
+    color:#ff5c8a;
+}
