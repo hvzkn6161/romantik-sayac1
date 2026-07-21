@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    color:#d6336c;
+    margin-bottom:20px;
+}
+
+#heart{
+    font-size:120px;
+    cursor:pointer;
+    transition:transform .2s;
+    user-select:none;
+}
+
+#counter{
+    margin-top:20px;
+    font-size:28px;
+    color:#d6336c;
+    font-weight:bold;
+}
