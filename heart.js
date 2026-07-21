@@ -13,5 +13,10 @@ heart.addEventListener("click", () => {
 
     counter.textContent = clicks + " / 100";
     heart.style.fontSize = size + "px";
+    heart.classList.remove("beat");
+
+void heart.offsetWidth;
+
+heart.classList.add("beat");
 
 });
