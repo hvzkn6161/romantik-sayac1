@@ -19,6 +19,7 @@ heart.addEventListener("click", () => {
 void heart.offsetWidth;
 
 heart.classList.add("beat");
+    createHeart();
 
 });
 function createHeart(){
