@@ -833,17 +833,17 @@ body{
 
 .sakura{
     position:absolute;
-    top:-40px;
-    font-size:24px;
-    animation:fall linear forwards;
-    opacity:.9;
+    top:-60px;
     user-select:none;
+    pointer-events:none;
+    animation: fall linear forwards, sway ease-in-out infinite alternate;
+    transform-origin:center;
 }
 
 @keyframes fall{
 
     0%{
-        transform:translateY(-50px) rotate(0deg);
+        transform:translateY(-80px) rotate(0deg);
         opacity:0;
     }
 
@@ -852,12 +852,19 @@ body{
     }
 
     100%{
-        transform:
-            translateY(110vh)
-            translateX(120px)
-            rotate(360deg);
-
+        transform:translateY(110vh) rotate(720deg);
         opacity:0;
+    }
+
+}
+@keyframes sway{
+
+    0%{
+        margin-left:-25px;
+    }
+
+    100%{
+        margin-left:25px;
     }
 
 }
