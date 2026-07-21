@@ -29,3 +29,26 @@ h1{
     color:#d6336c;
     font-weight:bold;
 }
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.15);
+    }
+
+    60% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.beat{
+    animation: heartbeat .3s;
+}
