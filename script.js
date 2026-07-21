@@ -286,3 +286,32 @@ musicBtn.addEventListener("click", function(){
     }
 
 });
+// Sakura Yaprakları
+
+const sakuraContainer = document.getElementById("sakura-container");
+
+function createSakura(){
+
+    const petal = document.createElement("div");
+
+    petal.className = "sakura";
+
+    petal.innerHTML = "🌸";
+
+    petal.style.left = Math.random()*100 + "vw";
+
+    petal.style.fontSize = (18 + Math.random()*16) + "px";
+
+    petal.style.animationDuration = (6 + Math.random()*5) + "s";
+
+    petal.style.opacity = Math.random();
+
+    sakuraContainer.appendChild(petal);
+
+    setTimeout(()=>{
+        petal.remove();
+    },11000);
+
+}
+
+setInterval(createSakura,600);
