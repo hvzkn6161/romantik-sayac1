@@ -302,7 +302,7 @@ function createSakura(){
 
     petal.style.fontSize = (18 + Math.random()*16) + "px";
 
-    petal.style.animationDuration = (6 + Math.random()*5) + "s";
+    petal.style.animationDuration = (8 + Math.random()*7) + "s";
 
     petal.style.opacity = Math.random();
 
@@ -314,4 +314,4 @@ function createSakura(){
 
 }
 
-setInterval(createSakura,600);
+setInterval(createSakura,350);
