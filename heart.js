@@ -75,33 +75,4 @@ function createHeart(){
 envelope.addEventListener("click", () => {
 
     envelope.classList.add("open");
-    const letterMessage =
-`Canım Aşkım ❤️
-
-Seninle tanıştığım günden beri hayatım daha güzel oldu.
-
-Her gülüşün bana umut oluyor.
-
-İyi ki varsın...
-
-Seni çok seviyorum. ❤️`;
-
-openLetter.addEventListener("click", () => {
-
-    letterText.textContent = "";
-
-    let i = 0;
-
-    const timer = setInterval(() => {
-
-        letterText.textContent += letterMessage[i];
-
-        i++;
-
-        if (i >= letterMessage.length) {
-            clearInterval(timer);
-        }
-
-    }, 45);
-
-});
+    });
