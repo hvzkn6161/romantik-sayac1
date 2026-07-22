@@ -84,3 +84,13 @@ h1{
     }
 
 }
+#message{
+    margin-top:15px;
+    font-size:22px;
+    color:#c2185b;
+    text-align:center;
+    width:80%;
+    max-width:500px;
+    line-height:1.5;
+    transition:.3s;
+}
