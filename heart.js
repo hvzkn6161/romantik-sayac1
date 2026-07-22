@@ -1,11 +1,30 @@
 const heart = document.getElementById("heart");
 const counter = document.getElementById("counter");
 const particles = document.getElementById("heartParticles");
+const message = document.getElementById("message");
 
 let clicks = 0;
 let size = 120;
 
 heart.addEventListener("click", () => {
+    if (clicks < 20) {
+    message.textContent = "💗 Kalbime ilk dokunuşun...";
+}
+else if (clicks < 40) {
+    message.textContent = "🥰 Her dokunuşunda daha da mutlu oluyorum.";
+}
+else if (clicks < 60) {
+    message.textContent = "💞 Artık kalbim seninle atıyor.";
+}
+else if (clicks < 80) {
+    message.textContent = "💖 Biraz daha... Çok yaklaştın.";
+}
+else if (clicks < 100) {
+    message.textContent = "💘 Son dokunuşlar...";
+}
+else {
+    message.textContent = "❤️ Tebrikler! Kalbimi tamamen ele geçirdin.";
+}
 
     if (clicks >= 100) return;
 
