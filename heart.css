@@ -240,3 +240,11 @@ h1{
     z-index:3;
     transition:.8s;
 }
+.envelope.open .envelope-flap{
+    transform:rotateX(180deg);
+}
+
+.envelope.open .envelope-letter{
+    transform:translateX(-50%) translateY(-70px);
+    transition:.8s;
+}
