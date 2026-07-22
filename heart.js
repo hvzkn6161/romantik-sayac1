@@ -2,6 +2,8 @@ const heart = document.getElementById("heart");
 const counter = document.getElementById("counter");
 const particles = document.getElementById("heartParticles");
 const message = document.getElementById("message");
+const finalMessage = document.getElementById("finalMessage");
+
 
 let clicks = 0;
 let size = 120;
@@ -38,7 +40,12 @@ else {
 void heart.offsetWidth;
 
 heart.classList.add("beat");
-    createHeart();
+createHeart();
+
+if (clicks === 100) {
+    finalMessage.classList.remove("hidden");
+    finalMessage.classList.add("show");
+}
 
 });
 function createHeart(){
