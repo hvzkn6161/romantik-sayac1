@@ -269,4 +269,5 @@ h1{
 
 #letterText{
     line-height:1.4;
+    white-space: pre-line;
 }
