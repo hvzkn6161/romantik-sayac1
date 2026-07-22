@@ -4,6 +4,8 @@ const particles = document.getElementById("heartParticles");
 const message = document.getElementById("message");
 const finalMessage = document.getElementById("finalMessage");
 const envelope = document.getElementById("envelope");
+const letterText = document.getElementById("letterText");
+const openLetter = document.getElementById("openLetter");
 
 
 let clicks = 0;
@@ -73,5 +75,33 @@ function createHeart(){
 envelope.addEventListener("click", () => {
 
     envelope.classList.add("open");
+    const letterMessage =
+`Canım Aşkım ❤️
+
+Seninle tanıştığım günden beri hayatım daha güzel oldu.
+
+Her gülüşün bana umut oluyor.
+
+İyi ki varsın...
+
+Seni çok seviyorum. ❤️`;
+
+openLetter.addEventListener("click", () => {
+
+    letterText.textContent = "";
+
+    let i = 0;
+
+    const timer = setInterval(() => {
+
+        letterText.textContent += letterMessage[i];
+
+        i++;
+
+        if (i >= letterMessage.length) {
+            clearInterval(timer);
+        }
+
+    }, 45);
 
 });
