@@ -3,6 +3,7 @@ const counter = document.getElementById("counter");
 const particles = document.getElementById("heartParticles");
 const message = document.getElementById("message");
 const finalMessage = document.getElementById("finalMessage");
+const envelope = document.getElementById("envelope");
 
 
 let clicks = 0;
@@ -69,3 +70,8 @@ function createHeart(){
     }, 1200);
 
 }
+envelope.addEventListener("click", () => {
+
+    envelope.classList.add("open");
+
+});
