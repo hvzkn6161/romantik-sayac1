@@ -97,8 +97,8 @@ h1{
 /* 100. tıklama sürprizi */
 
 .hidden{
-    display:none;
-}
+    display:none !important;
+}}
 
 #finalMessage{
     position:fixed;
