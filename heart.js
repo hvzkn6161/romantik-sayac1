@@ -6,6 +6,7 @@ const finalMessage = document.getElementById("finalMessage");
 const envelope = document.getElementById("envelope");
 const letterText = document.getElementById("letterText");
 const openLetter = document.getElementById("openLetter");
+const letterModalText = document.getElementById("letterModalText");
 
 
 let clicks = 0;
@@ -76,3 +77,25 @@ envelope.addEventListener("click", () => {
 
     envelope.classList.add("open");
     });
+openLetter.addEventListener("click", () => {
+
+    letterModal.classList.remove("hidden");
+
+    letterModalText.textContent =
+`Canım Aşkım ❤️
+
+Bu mektubu sana küçük bir sürpriz olsun diye hazırladım.
+
+Bu sayfadaki her satırı, her kalbi ve her detayı seni mutlu etmek için yaptım.
+
+İyi ki hayatımdasın.
+
+Seni çok seviyorum. ❤️`;
+
+});
+
+closeLetter.addEventListener("click", () => {
+
+    location.href = "index.html";
+
+});
