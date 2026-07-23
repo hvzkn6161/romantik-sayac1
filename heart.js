@@ -7,6 +7,8 @@ const envelope = document.getElementById("envelope");
 const letterText = document.getElementById("letterText");
 const openLetter = document.getElementById("openLetter");
 const letterModalText = document.getElementById("letterModalText");
+const letterModal = document.getElementById("letterModal");
+const closeLetter = document.getElementById("closeLetter");
 
 
 let clicks = 0;
