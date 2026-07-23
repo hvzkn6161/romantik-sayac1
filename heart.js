@@ -4,12 +4,13 @@ const particles = document.getElementById("heartParticles");
 const message = document.getElementById("message");
 const finalMessage = document.getElementById("finalMessage");
 const envelope = document.getElementById("envelope");
+
 const letterText = document.getElementById("letterText");
 const openLetter = document.getElementById("openLetter");
+
 const letterModalText = document.getElementById("letterModalText");
 const letterModal = document.getElementById("letterModal");
 const closeLetter = document.getElementById("closeLetter");
-
 
 let clicks = 0;
 let size = 120;
