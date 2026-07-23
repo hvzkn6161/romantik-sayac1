@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,43 +10,53 @@
 
 <body>
 
-    <h1>❤️ Kalbime Dokun ❤️</h1>
+<h1>❤️ Kalbime Dokun ❤️</h1>
 
-    <div id="heart">❤️</div>
-    <div id="heartParticles"></div>
+<div id="heart">❤️</div>
 
-    <p id="counter">0 / 100</p>
-    
-    <p id="message">💗 Kalbime ilk dokunuşun...</p>
+<div id="heartParticles"></div>
 
-    <div id="finalMessage" class="hidden">
+<p id="counter">0 / 100</p>
+
+<p id="message">
+💗 Kalbime ilk dokunuşun...
+</p>
+
+<!-- Final ekranı -->
+
+<div id="finalMessage" class="hidden">
 
     <div class="final-box">
 
-    <div class="envelope" id="envelope">
+        <div class="envelope" id="envelope">
 
-        <div class="envelope-back"></div>
+            <div class="envelope-back"></div>
 
-        <div class="envelope-letter">
-    ❤️
-</div>
+            <div class="envelope-letter">
+                ❤️
+            </div>
 
-        <div class="envelope-flap"></div>
+            <div class="envelope-flap"></div>
+
+        </div>
+
+        <h2>Sana Özel Bir Mektup 💌</h2>
+
+        <p>
+            Kalbimin içinde sadece sana ait küçük bir sürpriz var...
+        </p>
+
+        <button id="openLetter">
+            💌 Mektubu Aç
+        </button>
 
     </div>
 
-    <h2>Sana Özel Bir Mektup</h2>
+</div>
 
-    <p>
-        Kalbimin içinde sadece sana ait bir mektup saklı...
-    </p>
+<!-- Büyük mektup -->
 
-    <button id="openLetter">
-        💌 Mektubu Aç
-        
-    </button>
-        
-    <div id="letterModal" class="hidden">
+<div id="letterModal" class="hidden">
 
     <div class="letter-box">
 
@@ -61,15 +70,9 @@
 
     </div>
 
-</div>    
-
-</div>
-        
-
 </div>
 
-
-    <script src="heart.js"></script>
+<script src="heart.js"></script>
 
 </body>
 </html>
