@@ -1291,3 +1291,60 @@ body{
     transform:rotate(90deg) scale(1.1);
 
 }
+/* ===========================
+      Kalp Balonları
+=========================== */
+
+#balloonContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    bottom:-80px;
+
+    font-size:38px;
+
+    animation:flyBalloon 1.4s ease-out forwards;
+
+}
+
+@keyframes flyBalloon{
+
+    0%{
+
+        transform:translateY(0) scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-110vh)
+                  translateX(var(--moveX))
+                  rotate(var(--rotate));
+
+        opacity:0;
+
+    }
+
+}
