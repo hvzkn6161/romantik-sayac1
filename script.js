@@ -336,8 +336,10 @@ if(mapBtn){
 
             balloon.innerHTML = ["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
 
-            balloon.style.left =
-                (window.innerWidth/2 + (Math.random()*250-125)) + "px";
+            const rect = mapBtn.getBoundingClientRect();
+
+balloon.style.left =
+    (rect.left + rect.width/2 + (Math.random()*100-50)) + "px";
 
             balloon.style.setProperty(
                 "--moveX",
