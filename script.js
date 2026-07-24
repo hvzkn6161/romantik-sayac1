@@ -315,3 +315,54 @@ function createSakura(){
 }
 
 setInterval(createSakura,350);
+// ==========================
+// Aşk Haritası Kalp Balonları
+// ==========================
+
+const mapBtn = document.getElementById("mapBtn");
+const balloonContainer = document.getElementById("balloonContainer");
+
+if(mapBtn){
+
+    mapBtn.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        for(let i=0;i<10;i++){
+
+            const balloon = document.createElement("div");
+
+            balloon.className = "balloon";
+
+            balloon.innerHTML = ["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+
+            balloon.style.left =
+                (window.innerWidth/2 + (Math.random()*250-125)) + "px";
+
+            balloon.style.setProperty(
+                "--moveX",
+                (Math.random()*220-110)+"px"
+            );
+
+            balloon.style.setProperty(
+                "--rotate",
+                (Math.random()*60-30)+"deg"
+            );
+
+            balloonContainer.appendChild(balloon);
+
+            setTimeout(()=>{
+                balloon.remove();
+            },1400);
+
+        }
+
+        setTimeout(()=>{
+
+            window.location.href="harita.html";
+
+        },1200);
+
+    });
+
+}
