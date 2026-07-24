@@ -1012,3 +1012,50 @@ body{
     }
 
 }
+/* ===========================
+   Bir Not Çek Butonu
+=========================== */
+
+#loveReasonBtn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:15px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff5c93,#ff7cab);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(255,92,147,.35);
+
+    transition:.3s;
+
+}
+
+#loveReasonBtn:hover{
+
+    transform:translateY(-3px) scale(1.04);
+
+    box-shadow:0 16px 35px rgba(255,92,147,.45);
+
+}
+
+#loveReasonBtn:active{
+
+    transform:scale(.96);
+
+}
