@@ -1,0 +1,1487 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    overflow-x:hidden;
+    overflow-y:auto;
+    padding:20px 10px;
+    background:linear-gradient(135deg,#4b134f,#c94b4b,#ff758c);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+}
+
+/* Açılış */
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:1s;
+}
+
+.intro-content{
+    text-align:center;
+}
+
+.intro-content h1{
+    font-size:30px;
+    margin:20px 0;
+    color:#ff4f88;
+}
+
+.heart{
+    font-size:60px;
+    animation:heart 1s infinite;
+}
+
+@keyframes heart{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+/* Ana Kart */
+.card{
+    width:min(420px,95vw);
+    margin:20px auto;
+    padding:25px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.4);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    text-align:center;
+    display:none;
+}
+
+/* Başlık */
+.title{
+    font-family:'Great Vibes', cursive;
+    font-size:clamp(42px, 9vw, 68px);
+    font-weight:700;
+    color:#fff;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.25),
+        0 0 15px rgba(255,255,255,.5);
+    white-space:nowrap;
+}
+
+.date{
+    margin-top:10px;
+    color:white;
+    font-size:17px;
+}
+
+/* ========================= */
+/* FOTOĞRAF */
+/* ========================= */
+
+.photo-frame{
+    width:180px;
+    height:180px;
+    margin:25px auto;
+    padding:6px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#6dd5ed);
+    animation:rotateBorder 8s linear infinite;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    display:block;
+}
+
+@keyframes rotateBorder{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* ========================= */
+/* GÜN KUTUSU */
+/* ========================= */
+
+.counter-title{
+    color:white;
+    margin-top:15px;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.day-box{
+    width:260px;
+    margin:0 auto 30px;
+    padding:28px 20px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        0 0 25px rgba(255,105,180,.15);
+
+    transition:all .35s ease;
+}
+
+.day-box:hover{
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.4),
+        0 0 35px rgba(255,105,180,.35);
+}
+
+.day-box span{
+    display:block;
+    font-size:72px;
+    font-weight:700;
+    line-height:1;
+    color:#fff;
+    text-shadow:0 0 18px rgba(255,255,255,.35);
+}
+
+.day-box small{
+    display:block;
+    margin-top:12px;
+    font-size:20px;
+    letter-spacing:4px;
+    color:rgba(255,255,255,.85);
+    text-transform:uppercase;
+}
+
+/* ========================= */
+/* SAAT DAKİKA SANİYE */
+/* ========================= */
+
+.time-container{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.time-box{
+    width:100px;
+    height:120px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+    transition:.35s ease;
+    cursor:default;
+}
+
+.time-box:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.45),
+        0 0 20px rgba(255,105,180,.35);
+}
+
+.time-box span{
+    font-size:42px;
+    font-weight:700;
+    color:#fff;
+    line-height:1;
+    text-shadow:0 0 15px rgba(255,255,255,.30);
+}
+
+.time-box small{
+    margin-top:10px;
+    font-size:14px;
+    color:rgba(255,255,255,.80);
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+/* Mektup Penceresi */
+
+#letterModal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+@media (max-width:768px){
+
+    body{
+        align-items:flex-start;
+        padding:20px 10px;
+    }
+
+    .card{
+        width:100%;
+        max-width:100%;
+        padding:20px;
+        margin:20px auto;
+    }
+
+    .title{
+        font-size:38px;
+        white-space:nowrap;
+    }
+
+    .photo-frame{
+        width:150px;
+        height:150px;
+    }
+
+    .day-box{
+        width:100%;
+        max-width:220px;
+    }
+
+    .time-container{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .time-box{
+        width:70px;
+        padding:12px 8px;
+    }
+
+    .time-box span{
+        font-size:24px;
+    }
+}
+@media (max-width:480px){
+
+    .photo-frame{
+        width:140px;
+        height:140px;
+    }
+
+    .time-container{
+        gap:8px;
+    }
+
+    .time-box{
+        width:28%;
+        min-width:70px;
+    }
+
+    .day-box{
+        width:90%;
+    }
+
+}
+.heart-title{
+    display:inline-block;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+}
+.title-wrapper{
+    position:relative;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+#floating-hearts{
+    position:absolute;
+    width:120px;
+    height:120px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    overflow:visible;
+}
+
+.floating-heart{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    color:#ff5c8a;
+    opacity:0;
+    animation:riseHeart linear forwards;
+    text-shadow:0 0 10px rgba(255,255,255,.8);
+}
+
+@keyframes riseHeart{
+
+    0%{
+        transform:translate(-50%,0) scale(.7);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(calc(-50% + var(--x)), -180px) scale(1.4);
+        opacity:0;
+    }
+
+}
+.button-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.gallery-btn{
+    background:#ff5c8a;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:40px;
+    font-weight:600;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(255,92,138,.35);
+}
+
+.gallery-btn:hover{
+    transform:translateY(-3px);
+    background:#ff3d74;
+}
+/* ===== Anılarımız Sayfası ===== */
+
+.gallery-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.gallery-title{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    color:white;
+    margin-bottom:30px;
+    text-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+.polaroid{
+    background:white;
+    width:90%;
+    max-width:280px;
+    padding:12px;
+    padding-bottom:30px;
+    border-radius:8px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    transform:rotate(-2deg);
+    transition:.8s;
+    box-sizing:border-box;
+}
+.polaroid img{
+    width:100%;
+    height:auto;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
+    border-radius:4px;
+    transition:opacity .8s;
+}
+.polaroid{
+    max-width:340px;
+    width:90%;
+}
+
+
+
+
+.polaroid p{
+    margin-top:15px;
+    text-align:center;
+    font-family:'Poppins',sans-serif;
+    color:#444;
+    font-size:18px;
+}
+
+.gallery-btn{
+    margin-top:35px;
+    text-decoration:none;
+    background:#ff4f87;
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    font-family:'Poppins',sans-serif;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.gallery-btn:hover{
+    transform:scale(1.05);
+}
+/* ========================= */
+/* TELEFON UYUMLULUĞU */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    .gallery-page{
+        padding:20px;
+    }
+
+    .gallery-title{
+        font-size:42px;
+        text-align:center;
+    }
+
+    .polaroid{
+        width:95%;
+        max-width:320px;
+        padding:12px;
+        padding-bottom:30px;
+        margin:auto;
+        transform:none;
+    }
+
+    .polaroid img{
+        width:100%;
+        height:auto;
+        aspect-ratio:3/4;
+        object-fit:cover;
+    }
+
+    .polaroid p{
+        font-size:16px;
+    }
+
+}
+.gallery-controls{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:20px;
+}
+
+.gallery-controls button{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.gallery-controls button:hover{
+    transform:scale(1.1);
+}
+#map{
+    width:95%;
+    max-width:900px;
+    height:500px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    margin-bottom:30px;
+}
+.heart-marker{
+    font-size:34px;
+    animation:heartBeat 1.3s infinite;
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+/* ❤️ Gizli Kalp */
+#secretHeart{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#secretHeart:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Gizli Mesaj */
+.secret-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.secret-box{
+    width: 320px;
+    max-width: 90%;
+    background: #222;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,0,100,.4);
+}
+
+.secret-box button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+.secret-heart{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 9999;
+
+    animation: heartBeat 1.5s infinite;
+
+    overflow: visible;
+}
+
+.secret-heart{
+    position: fixed;
+}
+
+.secret-heart{
+    position: relative;
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.15);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    75%{
+        transform: scale(1.15);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+.mini-heart{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+
+    font-size:16px;
+
+    pointer-events:none;
+
+    animation:flyHeart 1.8s ease-out forwards;
+}
+
+@keyframes flyHeart{
+
+    0%{
+        opacity:1;
+        transform:translate(-50%,0) scale(0.8);
+    }
+
+    25%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                -120px
+            )
+            scale(1.5)
+            rotate(var(--r));
+    }
+
+}
+/* Arka planda düşen kalpler */
+
+.falling-heart{
+    position: fixed;
+    top: -40px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 1;
+
+    animation: fallHeart linear forwards;
+}
+
+@keyframes fallHeart{
+
+    0%{
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+/* 🌙 Gece Gökyüzü */
+
+body{
+    background: linear-gradient(to bottom, #081229, #13294b);
+    overflow-x: hidden;
+}
+
+.star{
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: twinkle 2s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1.6);
+    }
+
+}
+/* 🌠 Kayan Yıldız */
+
+.shooting-star{
+    position: fixed;
+    width: 140px;
+    height: 2px;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2;
+
+    transform: rotate(-35deg);
+
+    animation: shootingStar 1s linear forwards;
+}
+
+@keyframes shootingStar{
+
+    from{
+        opacity: 0;
+        transform: translate(0,0) rotate(-35deg);
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+        transform: translate(-450px,450px) rotate(-35deg);
+    }
+
+}
+/* Kavanoz açılma animasyonu */
+
+.jar-icon.shake {
+    animation: jarShake 0.6s ease;
+}
+
+@keyframes jarShake {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    60% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+
+/* Not çıkış efekti */
+
+.love-show {
+    animation: noteShow 0.5s ease;
+}
+
+
+@keyframes noteShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+/* Footer */
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:20px;
+    color:rgba(255,255,255,.75);
+}
+
+.footer p{
+    margin:0;
+    font-size:14px;
+}
+
+.footer span{
+    display:block;
+    margin-top:6px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:rgba(255,255,255,.55);
+}
+/* 🎵 Müzik Butonu */
+
+#musicBtn{
+    position:fixed;
+    right:25px;
+    bottom:90px;
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,92,138,.9);
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.3s;
+    z-index:9999;
+}
+
+#musicBtn:hover{
+    transform:scale(1.12);
+    background:#ff3f78;
+}
+/* Sakura Yaprakları */
+#sakura-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.sakura{
+    position:absolute;
+    top:-60px;
+    user-select:none;
+    pointer-events:none;
+    animation: fall linear forwards, sway ease-in-out infinite alternate;
+    transform-origin:center;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-80px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+
+}
+@keyframes sway{
+
+    0%{
+        margin-left:-25px;
+    }
+
+    100%{
+        margin-left:25px;
+    }
+
+}
+/* ===========================
+   Bana Dokun Butonu
+=========================== */
+
+#openLetter{
+    position:relative;
+    overflow:hidden;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    margin-top:30px;
+    padding:18px 42px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff5c93,#ff8ab5);
+
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:20px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(255,92,147,.35);
+
+    transition:.35s ease;
+
+    animation:buttonPulse 2.5s infinite;
+}
+
+#openLetter:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 18px 40px rgba(255,92,147,.45);
+}
+
+#openLetter:active{
+    transform:scale(.96);
+}
+
+#openLetter::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+}
+
+#openLetter:hover::before{
+    left:140%;
+    transition:.8s;
+}
+
+@keyframes buttonPulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.03);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+/* ===========================
+   Neden Seni Seviyorum Kartı
+=========================== */
+
+.love-jar{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+}
+
+.love-jar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+.love-jar h3{
+
+    font-size:28px;
+
+    color:#fff;
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.jar-icon{
+
+    font-size:52px;
+
+    display:block;
+
+    text-align:center;
+
+    margin-bottom:8px;
+
+    animation:jarFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes jarFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+/* ===========================
+   Bir Not Çek Butonu
+=========================== */
+
+#loveReasonBtn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:15px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff5c93,#ff7cab);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(255,92,147,.35);
+
+    transition:.3s;
+
+}
+
+#loveReasonBtn:hover{
+
+    transform:translateY(-3px) scale(1.04);
+
+    box-shadow:0 16px 35px rgba(255,92,147,.45);
+
+}
+
+#loveReasonBtn:active{
+
+    transform:scale(.96);
+
+}
+/* ===========================
+   Buton Grubu
+=========================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin:20px 0 30px;
+
+    flex-wrap:wrap;
+
+}
+
+.gallery-btn{
+
+    flex:1;
+
+    min-width:140px;
+
+    max-width:180px;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.3s;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.gallery-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.16);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+/* ===========================
+      Kalbime Dokun Kartı
+=========================== */
+
+.heart-game{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.heart-game:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(255,0,120,.20);
+
+}
+
+.heart-icon{
+
+    font-size:55px;
+
+    animation:heartFloat 2.5s ease-in-out infinite;
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.heart-game h3{
+
+    margin:12px 0 10px;
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.heart-game p{
+
+    color:#ddd;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+
+}
+
+.heart-btn{
+
+    display:inline-block;
+
+    padding:14px 34px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#ff4f87,#ff76aa);
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(255,79,135,.35);
+
+}
+
+.heart-btn:hover{
+
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:0 18px 40px rgba(255,79,135,.45);
+
+}
+/* ===========================
+      Mektup Kutusu
+=========================== */
+
+.letter{
+
+    background:rgba(255,250,252,.98);
+
+    color:#444;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    border:2px solid rgba(255,120,170,.25);
+
+}
+.letter-text{
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    text-align:left;
+
+}
+.letter h2{
+
+    color:#e91e63;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:32px;
+
+}
+#closeLetter{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff5c93;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#closeLetter:hover{
+
+    transform:rotate(90deg) scale(1.1);
+
+}
+/* ===========================
+      Kalp Balonları
+=========================== */
+
+#balloonContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    bottom:-80px;
+
+    font-size:38px;
+
+    animation:flyBalloon 1.4s ease-out forwards;
+
+}
+
+@keyframes flyBalloon{
+
+    0%{
+
+        transform:translateY(0) scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-110vh)
+                  translateX(var(--moveX))
+                  rotate(var(--rotate));
+
+        opacity:0;
+
+    }
+
+}
+/* ===========================
+          Footer
+=========================== */
+
+.footer{
+
+    margin-top:45px;
+
+    text-align:center;
+
+    padding-bottom:20px;
+
+}
+
+.footer-line{
+
+    width:130px;
+
+    height:2px;
+
+    margin:0 auto 25px;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:10px;
+
+}
+
+.footer-title{
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.footer-text{
+
+    color:#e8e8e8;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+.footer-date{
+
+    color:#ffb6cf;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
+
+.footer-design{
+
+    color:#9e9e9e;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+.counter-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.counter-title h2{
+    font-size:30px;
+    color:#fff;
+    font-weight:700;
+    margin-bottom:8px;
+    text-shadow:0 0 15px rgba(255,255,255,.25);
+}
+
+.counter-title p{
+    color:rgba(255,255,255,.75);
+    font-size:15px;
+    letter-spacing:1px;
+}
