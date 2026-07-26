@@ -9,7 +9,6 @@ const days = document.getElementById("days");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
-
 // Açılış ekranı
 window.onload = () => {
 
@@ -37,23 +36,28 @@ function updateCounter(){
 
     const diff = now - startDate;
 
-    const totalSeconds = Math.floor(diff/1000);
+    const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    const d = Math.floor(totalSeconds / 86400);
+    const totalHours = Math.floor(diff / (1000 * 60 * 60));
 
-    const h = Math.floor((totalSeconds % 86400) / 3600);
+    const totalMinutes = Math.floor(diff / (1000 * 60));
 
-    const m = Math.floor((totalSeconds % 3600) / 60);
+    const totalSeconds = Math.floor(diff / 1000);
 
+    const h = totalHours % 24;
+    const m = totalMinutes % 60;
     const s = totalSeconds % 60;
 
-    days.textContent = d;
+    const ms = Math.floor((diff % 1000) / 10);
+
+    days.textContent = totalDays;
 
     hours.textContent = String(h).padStart(2,"0");
 
     minutes.textContent = String(m).padStart(2,"0");
 
     seconds.textContent = String(s).padStart(2,"0");
+
 
 }
 
