@@ -70,16 +70,7 @@ body{
     display:none;
     position: relative;
     overflow: hidden;
-    /* ==========================
-   3D Card Effect
-========================== */
 
-.card:hover{
-
-    box-shadow:
-        0 35px 70px rgba(0,0,0,.28);
-
-}
 }
 
 /* Başlık */
