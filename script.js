@@ -9,6 +9,12 @@ const days = document.getElementById("days");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
+let previousValues = {
+    days: "",
+    hours: "",
+    minutes: "",
+    seconds: ""
+};
 // Açılış ekranı
 window.onload = () => {
 
@@ -20,6 +26,17 @@ window.onload = () => {
 
             intro.style.display = "none";
             card.style.display = "block";
+            const items = document.querySelectorAll(".fade-item");
+
+items.forEach((item,index)=>{
+
+    setTimeout(()=>{
+
+        item.classList.add("show");
+
+    },index*250);
+
+});
 
         },1000);
 
@@ -50,13 +67,32 @@ function updateCounter(){
 
     const ms = Math.floor((diff % 1000) / 10);
 
-    days.textContent = totalDays;
+    const values = {
+    days: totalDays,
+    hours: String(h).padStart(2,"0"),
+    minutes: String(m).padStart(2,"0"),
+    seconds: String(s).padStart(2,"0")
+};
 
-    hours.textContent = String(h).padStart(2,"0");
+Object.entries(values).forEach(([key, value]) => {
 
-    minutes.textContent = String(m).padStart(2,"0");
+    const element = document.getElementById(key);
 
-    seconds.textContent = String(s).padStart(2,"0");
+    if (previousValues[key] != value) {
+
+        element.textContent = value;
+
+        element.classList.remove("counter-pop");
+
+        void element.offsetWidth;
+
+        element.classList.add("counter-pop");
+
+        previousValues[key] = value;
+
+    }
+
+});
 
 
 }
@@ -372,3 +408,124 @@ balloon.style.left =
     });
 
 }
+// ==========================
+// Fotoğraf Parallax
+// ==========================
+
+const photoFrame = document.querySelector(".photo-frame");
+
+window.addEventListener("scroll", () => {
+
+    const y = window.scrollY;
+
+    photoFrame.style.transform = `translateY(${y * 0.12}px)`;
+
+});
+// ==========================
+// Başlık Parallax
+// ==========================
+
+const titleWrapper = document.getElementById("titleWrapper");
+
+window.addEventListener("scroll", () => {
+
+    const y = window.scrollY;
+
+    titleWrapper.style.transform = `translateY(${y * 0.2}px)`;
+
+});
+// ==========================
+// Scroll Reveal
+// ==========================
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(item=>{
+
+        const top = item.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+// ==========================
+// Mouse Glow
+// ==========================
+
+const cardElement = document.querySelector(".card");
+
+cardElement.addEventListener("mousemove",(e)=>{
+
+    const rect = cardElement.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+
+    const y = e.clientY - rect.top;
+
+    cardElement.style.setProperty("--mouse-x",`${x}px`);
+
+    cardElement.style.setProperty("--mouse-y",`${y}px`);
+
+});
+// ==========================
+// Fotoğraf Kalpleri
+// ==========================
+
+const photo = document.querySelector(".photo-frame");
+
+photo.addEventListener("mouseenter",()=>{
+
+    for(let i=0;i<8;i++){
+
+        const heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+
+        heart.style.position="fixed";
+
+        const rect=photo.getBoundingClientRect();
+
+        heart.style.left=(rect.left+rect.width/2)+"px";
+        heart.style.top=(rect.top+rect.height/2)+"px";
+
+        heart.style.pointerEvents="none";
+        heart.style.fontSize=(14+Math.random()*16)+"px";
+        heart.style.zIndex="99999";
+
+        const x=(Math.random()*180-90);
+        const y=-(80+Math.random()*120);
+
+        heart.animate([
+            {
+                transform:"translate(0,0) scale(.7)",
+                opacity:1
+            },
+            {
+                transform:`translate(${x}px,${y}px) scale(1.5)`,
+                opacity:0
+            }
+        ],{
+            duration:1200,
+            easing:"ease-out"
+        });
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),1200);
+
+    }
+
+});

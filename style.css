@@ -68,6 +68,8 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,.15);
     text-align:center;
     display:none;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Başlık */
@@ -100,6 +102,8 @@ body{
     border-radius:50%;
     background:linear-gradient(135deg,#1e3c72,#2a5298,#6dd5ed);
     animation:rotateBorder 8s linear infinite;
+    cursor: pointer;
+    transition: .45s ease;
 }
 
 .photo-frame img{
@@ -148,7 +152,11 @@ body{
 
     transition:.35s;
     position: relative;
-overflow: hidden;
+    overflow: hidden;
+    transition:.35s ease;
+    cursor:default;
+    position:relative;
+    overflow:hidden;
 }
 
 .day-box:hover{
@@ -221,6 +229,9 @@ overflow: hidden;
         0 12px 30px rgba(0,0,0,.18);
 
     transition:.35s;
+    transition:.35s ease;
+    position:relative;
+    overflow:hidden;
 }
 
 .time-box:hover{
@@ -412,6 +423,9 @@ overflow: hidden;
     font-family:'Poppins',sans-serif;
     transition:.3s;
     box-shadow:0 8px 20px rgba(255,92,138,.35);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .gallery-btn:hover{
@@ -974,6 +988,9 @@ body{
     transition:.35s ease;
 
     animation:buttonPulse 2.5s infinite;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 #openLetter:hover{
@@ -1117,6 +1134,9 @@ body{
     box-shadow:0 10px 25px rgba(255,92,147,.35);
 
     transition:.3s;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 
 }
 
@@ -1287,6 +1307,9 @@ body{
     transition:.3s;
 
     box-shadow:0 10px 25px rgba(255,79,135,.35);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 
 }
 
@@ -1524,4 +1547,217 @@ body{
     letter-spacing:3px;
     margin-bottom:12px;
     text-transform:uppercase;
+}
+/* ==========================
+   Giriş Animasyonları
+========================== */
+
+.fade-item{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.fade-item.show{
+    opacity:1;
+    transform:translateY(0);
+}
+/* ==========================
+   Scroll Reveal
+========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ==========================
+   Mouse Glow Effect
+========================== */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    left:var(--mouse-x,50%);
+    top:var(--mouse-y,50%);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.20) 0%,
+        rgba(255,120,180,.12) 35%,
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    transition:left .08s linear,
+               top .08s linear;
+
+}
+/* ==========================
+   Photo Hover
+========================== */
+
+.photo-frame:hover{
+
+    transform:scale(1.06) rotate(3deg);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.25),
+        0 0 60px rgba(255,105,180,.45);
+
+}
+
+.photo-frame img{
+
+    transition:.45s ease;
+
+}
+
+.photo-frame:hover img{
+
+    transform:scale(1.08);
+
+}
+/* ==========================
+   Counter Hover
+========================== */
+
+.day-box:hover,
+.time-box:hover{
+
+    transform:translateY(-8px) scale(1.04);
+
+    box-shadow:
+        0 15px 35px rgba(255,120,180,.25),
+        0 0 35px rgba(255,255,255,.15);
+
+    border-color:rgba(255,255,255,.65);
+
+}
+
+.day-box::before,
+.time-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transform:translateX(-130%);
+
+}
+
+.day-box:hover::before,
+.time-box:hover::before{
+
+    transform:translateX(130%);
+
+    transition:1s;
+
+}
+/* ==========================
+   Premium Button Shine
+========================== */
+
+#openLetter::after,
+#loveReasonBtn::after,
+.gallery-btn::after,
+.heart-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+
+    left:-120%;
+
+    width:60%;
+
+    height:180%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform:rotate(18deg);
+
+    transition:left .7s ease;
+
+}
+
+#openLetter:hover::after,
+#loveReasonBtn:hover::after,
+.gallery-btn:hover::after,
+.heart-btn:hover::after{
+
+    left:160%;
+
+}
+/* ==========================
+   Counter Pop Animation
+========================== */
+
+.counter-pop{
+
+    animation:counterPop .35s ease;
+
+}
+
+@keyframes counterPop{
+
+    0%{
+        transform:scale(1);
+    }
+
+    35%{
+        transform:scale(1.18);
+        color:#ffffff;
+        text-shadow:0 0 18px rgba(255,255,255,.8);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
 }
