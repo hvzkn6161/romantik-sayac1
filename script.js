@@ -1,3 +1,24 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    updateDoc,
+    increment
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyABXe8TTT1FaFYNtoU7Q-lGB5CELae5ucY",
+    authDomain: "romantik-sayac.firebaseapp.com",
+    projectId: "romantik-sayac",
+    storageBucket: "romantik-sayac.firebasestorage.app",
+    messagingSenderId: "849789263351",
+    appId: "1:849789263351:web:e80e5ddc009dce3267a2f2"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 // Başlangıç tarihi
 const startDate = new Date("2022-06-15T00:00:00");
 
@@ -562,5 +583,49 @@ if (galleryBtn) {
         });
 
     });
+
+}
+// ==========================
+// Ziyaret Sayacı
+// ==========================
+
+async function increaseVisitCount() {
+
+    const ref = doc(db, "stats", "global");
+
+    try {
+
+        await updateDoc(ref, {
+            visits: increment(1)
+        });
+
+        console.log("✅ Ziyaret sayısı artırıldı.");
+
+    } catch (error) {
+
+        console.error("Hata:", error);
+
+    }
+
+}
+
+increaseVisitCount();
+async function loadVisitCount() {
+
+    const ref = doc(db, "stats", "global");
+
+    const snap = await getDoc(ref);
+
+    if (snap.exists()) {
+
+        const data = snap.data();
+
+        document.getElementById("visitCount").textContent = data.visits || 0;
+
+        document.getElementById("letterCount").textContent = data.letters || 0;
+
+        document.getElementById("galleryCount").textContent = data.gallery || 0;
+
+    }
 
 }
