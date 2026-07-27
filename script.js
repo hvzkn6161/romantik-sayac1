@@ -107,7 +107,13 @@ const closeLetter = document.getElementById("closeLetter");
 const letterModal = document.getElementById("letterModal");
 
 openLetter.onclick = function () {
+
+    trackEvent("letter_open", {
+        button_name: "Bana Dokun"
+    });
+
     letterModal.style.display = "flex";
+
 }
 
 closeLetter.onclick = function () {
@@ -304,6 +310,9 @@ const loveReasonBtn = document.getElementById("loveReasonBtn");
 const loveReasonText = document.getElementById("loveReasonText");
 
 loveReasonBtn.addEventListener("click", function () {
+    trackEvent("love_note_click", {
+    button_name: "Bir Not Çek"
+});
 
     const random = Math.floor(Math.random() * loveReasons.length);
     console.log(random);
@@ -365,6 +374,9 @@ const balloonContainer = document.getElementById("balloonContainer");
 if(mapBtn){
 
     mapBtn.addEventListener("click", function(e){
+        trackEvent("map_open", {
+    button_name: "Aşk Haritamız"
+});
 
         e.preventDefault();
 
@@ -529,3 +541,26 @@ photo.addEventListener("mouseenter",()=>{
     }
 
 });
+// Google Analytics Event Gönderme
+function trackEvent(eventName, params = {}) {
+
+    if (typeof gtag === "function") {
+
+        gtag("event", eventName, params);
+
+    }
+
+}
+const galleryBtn = document.getElementById("galleryBtn");
+
+if (galleryBtn) {
+
+    galleryBtn.addEventListener("click", function () {
+
+        trackEvent("gallery_open", {
+            button_name: "Anılarımız"
+        });
+
+    });
+
+}
