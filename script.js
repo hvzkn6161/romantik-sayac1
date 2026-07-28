@@ -127,13 +127,17 @@ const openLetter = document.getElementById("openLetter");
 const closeLetter = document.getElementById("closeLetter");
 const letterModal = document.getElementById("letterModal");
 
-openLetter.onclick = function () {
+openLetter.onclick = async function () {
 
     trackEvent("letter_open", {
         button_name: "Bana Dokun"
     });
 
     letterModal.style.display = "flex";
+
+    await increaseStat("letters");
+
+    loadVisitCount();
 
 }
 
@@ -330,14 +334,20 @@ const loveReasons = [
 const loveReasonBtn = document.getElementById("loveReasonBtn");
 const loveReasonText = document.getElementById("loveReasonText");
 
-loveReasonBtn.addEventListener("click", function () {
+loveReasonBtn.addEventListener("click", async function () {
+
     trackEvent("love_note_click", {
-    button_name: "Bir Not Çek"
-});
+        button_name: "Bir Not Çek"
+    });
+
+    await increaseStat("loveNotes");
+
+    loadVisitCount();
 
     const random = Math.floor(Math.random() * loveReasons.length);
+
     console.log(random);
-console.log(loveReasons[random]);
+    console.log(loveReasons[random]);
 
     loveReasonText.textContent = loveReasons[random];
 
@@ -345,14 +355,22 @@ console.log(loveReasons[random]);
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-musicBtn.addEventListener("click", function(){
+musicBtn.addEventListener("click", async function(){
 
     if(music.paused){
+
+        await increaseStat("music");
+
+        loadVisitCount();
+
         music.play();
         musicBtn.innerHTML = "🔊";
+
     } else {
+
         music.pause();
         musicBtn.innerHTML = "🎵";
+
     }
 
 });
@@ -394,10 +412,11 @@ const balloonContainer = document.getElementById("balloonContainer");
 
 if(mapBtn){
 
-    mapBtn.addEventListener("click", function(e){
+    mapBtn.addEventListener("click", async function(e){
         trackEvent("map_open", {
     button_name: "Aşk Haritamız"
 });
+    await increaseStat("map");
 
         e.preventDefault();
 
@@ -576,11 +595,13 @@ const galleryBtn = document.getElementById("galleryBtn");
 
 if (galleryBtn) {
 
-    galleryBtn.addEventListener("click", function () {
+    galleryBtn.addEventListener("click", async function () {
 
         trackEvent("gallery_open", {
             button_name: "Anılarımız"
         });
+
+        await increaseStat("gallery");
 
     });
 
@@ -625,7 +646,42 @@ async function loadVisitCount() {
         document.getElementById("letterCount").textContent = data.letters || 0;
 
         document.getElementById("galleryCount").textContent = data.gallery || 0;
+        document.getElementById("mapCount").textContent = data.map || 0;
+        document.getElementById("loveNotesCount").textContent = data.loveNotes || 0;
+        document.getElementById("musicCount").textContent = data.music || 0;
+        document.getElementById("heartGameCount").textContent = data.heartGame || 0;
 
     }
+
+}
+loadVisitCount();
+async function increaseStat(field) {
+
+    const ref = doc(db, "stats", "global");
+
+    try {
+
+        await updateDoc(ref, {
+            [field]: increment(1)
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+const heartBtn = document.querySelector(".heart-btn");
+
+if (heartBtn) {
+
+    heartBtn.addEventListener("click", async function () {
+
+        await increaseStat("heartGame");
+
+        loadVisitCount();
+
+    });
 
 }

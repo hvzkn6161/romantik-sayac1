@@ -1857,42 +1857,79 @@ body{
       Aşkımız Rakamlarla
 =========================== */
 
+
+
+
+
+
+
+/* ===========================
+   İstatistik Kartı
+=========================== */
+
 .stats-card{
 
     margin-top:40px;
 
-    padding:22px;
+    padding:25px;
 
-    border-radius:24px;
+    border-radius:28px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
 
-    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 12px 35px rgba(255,105,180,.18),
+        inset 0 1px 0 rgba(255,255,255,.25);
 
     transition:.35s;
+    position:relative;
 
+    overflow:hidden;
 }
 
 .stats-card:hover{
 
     transform:translateY(-4px);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    box-shadow:
+        0 18px 45px rgba(255,105,180,.25),
+        inset 0 1px 0 rgba(255,255,255,.35);
 
 }
 
-.stats-card h3{
+.stats-title{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:2.2rem;
 
     color:#fff;
 
-    font-size:24px;
+    text-align:center;
 
-    margin-bottom:24px;
+    margin-bottom:8px;
+
+    text-shadow:0 0 20px rgba(255,105,180,.6);
 
 }
 
+.stats-subtitle{
+
+    text-align:center;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:.95rem;
+
+    margin-bottom:28px;
+
+}
 .stats-grid{
 
     display:grid;
@@ -1901,23 +1938,66 @@ body{
 
     gap:18px;
 
+    margin-top:10px;
+
 }
 
 .stat-item{
 
-    background:rgba(255,255,255,.07);
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.16),
+        rgba(255,255,255,.05)
+    );
 
-    border-radius:18px;
+    border:1px solid rgba(255,255,255,.18);
 
-    padding:14px;
+    border-radius:22px;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.stat-item:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+    box-shadow:
+        0 16px 35px rgba(255,105,180,.28);
 
 }
 
 .stat-icon{
 
-    font-size:26px;
+    width:60px;
 
-    margin-bottom:8px;
+    height:60px;
+
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    background:rgba(255,255,255,.15);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.25),
+        0 6px 15px rgba(255,105,180,.18);
 
 }
 
@@ -1925,18 +2005,101 @@ body{
 
     display:block;
 
-    font-size:28px;
+    font-size:30px;
 
-    font-weight:bold;
+    font-weight:700;
 
     color:#fff;
+
+    text-shadow:0 0 18px rgba(255,105,180,.65);
 
 }
 
 .stat-item small{
 
+    display:block;
+
+    margin-top:8px;
+
     color:#ffdbe8;
 
-    font-size:15px;
+    font-size:14px;
 
+    letter-spacing:.5px;
+
+}
+.stats-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.stats-card:hover::before{
+
+    animation:statsShine 1.2s ease;
+
+}
+
+@keyframes statsShine{
+
+    from{
+
+        left:-150%;
+
+    }
+
+    to{
+
+        left:180%;
+
+    }
+
+}
+/* İkon Renkleri */
+
+.stat-item:nth-child(1) .stat-icon{
+    background:linear-gradient(135deg,#5dade2,#3498db);
+}
+
+.stat-item:nth-child(2) .stat-icon{
+    background:linear-gradient(135deg,#ff6fa5,#ff4081);
+}
+
+.stat-item:nth-child(3) .stat-icon{
+    background:linear-gradient(135deg,#b388ff,#7c4dff);
+}
+
+.stat-item:nth-child(4) .stat-icon{
+    background:linear-gradient(135deg,#4dd0e1,#00acc1);
+}
+
+.stat-item:nth-child(5) .stat-icon{
+    background:linear-gradient(135deg,#ff7675,#e74c3c);
+}
+
+.stat-item:nth-child(6) .stat-icon{
+    background:linear-gradient(135deg,#ffd54f,#ffb300);
+}
+
+.stat-item:nth-child(7) .stat-icon{
+    background:linear-gradient(135deg,#81c784,#43a047);
 }
