@@ -313,21 +313,34 @@ body{
     }
 
     .card{
-        width:100%;
-        max-width:100%;
-        padding:20px;
-        margin:20px auto;
-    }
+    width:100%;
+    max-width:100%;
+
+    padding:22px 18px;
+
+    margin:22px auto;
+
+}
 
     .title{
-        font-size:38px;
-        white-space:nowrap;
-    }
 
-    .photo-frame{
-        width:150px;
-        height:150px;
-    }
+    font-size:36px;
+
+    line-height:1.15;
+
+    white-space:normal;
+
+    text-align:center;
+
+}
+
+    ..photo-frame{
+
+    width:165px;
+
+    height:165px;
+
+}
 
     .day-box{
         width:100%;
@@ -438,18 +451,50 @@ body{
 }
 
 .gallery-btn{
-    background:#ff5c8a;
-    color:white;
+
+    background:linear-gradient(135deg,#ff6b9b,#ff4d88);
+
+    color:#fff;
+
     text-decoration:none;
-    padding:14px 28px;
-    border-radius:40px;
+
+    padding:16px 30px;
+
+    border-radius:18px;
+
     font-weight:600;
+
     font-family:'Poppins',sans-serif;
-    transition:.3s;
-    box-shadow:0 8px 20px rgba(255,92,138,.35);
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
+
+    font-size:16px;
+
+    transition:all .30s ease;
+
+    box-shadow:
+        0 10px 25px rgba(255,92,138,.30),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:58px;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+.gallery-btn:active{
+
+    transform:scale(.97);
+
 }
 
 .gallery-btn:hover{
@@ -993,21 +1038,23 @@ body{
     gap:10px;
 
     margin-top:30px;
-    padding:18px 42px;
+    padding:20px 44px;
 
     border:none;
-    border-radius:50px;
+    border-radius:20px;
 
     background:linear-gradient(135deg,#ff5c93,#ff8ab5);
 
     color:#fff;
     font-family:'Poppins',sans-serif;
-    font-size:20px;
+    font-size:18px;
     font-weight:600;
 
     cursor:pointer;
 
-    box-shadow:0 12px 30px rgba(255,92,147,.35);
+    box-shadow:
+    0 12px 28px rgba(255,92,147,.30),
+    inset 0 1px 0 rgba(255,255,255,.25);
 
     transition:.35s ease;
 
@@ -1018,12 +1065,16 @@ body{
 }
 
 #openLetter:hover{
-    transform:translateY(-5px) scale(1.05);
+    transform:translateY(-3px) scale(1.02);
     box-shadow:0 18px 40px rgba(255,92,147,.45);
 }
 
 #openLetter:active{
-    transform:scale(.96);
+
+    transform:scale(.97);
+
+    transition:.1s;
+
 }
 
 #openLetter::before{
@@ -1869,28 +1920,30 @@ body{
 
 .stats-card{
 
+    position:relative;
+
+    overflow:hidden;
+
     margin-top:40px;
 
-    padding:25px;
+    padding:28px;
 
     border-radius:28px;
 
     background:rgba(255,255,255,.10);
 
+    border:1px solid rgba(255,255,255,.18);
+
     backdrop-filter:blur(18px);
 
     -webkit-backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.18);
-
     box-shadow:
         0 12px 35px rgba(255,105,180,.18),
-        inset 0 1px 0 rgba(255,255,255,.25);
+        inset 0 1px 0 rgba(255,255,255,.20);
 
     transition:.35s;
-    position:relative;
 
-    overflow:hidden;
 }
 
 .stats-card:hover{
@@ -2005,13 +2058,19 @@ body{
 
     display:block;
 
-    font-size:30px;
+    font-size:34px;
 
     font-weight:700;
 
     color:#fff;
 
-    text-shadow:0 0 18px rgba(255,105,180,.65);
+    line-height:1;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        0 0 20px rgba(255,105,180,.6);
 
 }
 
@@ -2019,13 +2078,17 @@ body{
 
     display:block;
 
-    margin-top:8px;
+    margin-top:10px;
 
-    color:#ffdbe8;
+    color:#ffe2ef;
 
-    font-size:14px;
+    font-size:13px;
 
-    letter-spacing:.5px;
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
 
 }
 .stats-card::before{
@@ -2102,4 +2165,335 @@ body{
 
 .stat-item:nth-child(7) .stat-icon{
     background:linear-gradient(135deg,#81c784,#43a047);
+}
+.stats-title::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:3px;
+
+    margin:12px auto 0;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #ff77b7,
+        transparent
+    );
+
+    box-shadow:0 0 12px rgba(255,105,180,.7);
+
+}
+.stats-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(255,105,180,.18),
+        transparent 70%
+    );
+
+    top:-80px;
+
+    right:-80px;
+
+    pointer-events:none;
+
+}
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.stats-card{
+
+    animation:cardFloat 5s ease-in-out infinite;
+
+}
+/* ===========================
+   İstatistik Kartı Animasyonu
+=========================== */
+
+@keyframes statGlow {
+
+    0%,100%{
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.18),
+            0 8px 18px rgba(0,0,0,.12);
+
+    }
+
+    50%{
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.25),
+            0 12px 28px rgba(255,105,180,.22);
+
+    }
+
+}
+
+.stat-item{
+
+    animation:statGlow 4s ease-in-out infinite;
+
+}
+.stat-item:nth-child(2){
+    animation-delay:.4s;
+}
+
+.stat-item:nth-child(3){
+    animation-delay:.8s;
+}
+
+.stat-item:nth-child(4){
+    animation-delay:1.2s;
+}
+
+.stat-item:nth-child(5){
+    animation-delay:1.6s;
+}
+
+.stat-item:nth-child(6){
+    animation-delay:2s;
+}
+
+.stat-item:nth-child(7){
+    animation-delay:2.4s;
+}
+/* ===========================
+   Gizli HAS
+=========================== */
+
+#secretHas{
+
+    display:inline-block;
+
+    color:#ff4d6d;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        color .25s ease,
+        text-shadow .25s ease;
+
+    text-shadow:0 0 8px rgba(255,77,109,.4);
+
+    user-select:none;
+
+}
+
+#secretHas:hover{
+
+    color:#ff7a95;
+
+    text-shadow:
+        0 0 18px rgba(255,77,109,.8),
+        0 0 30px rgba(255,77,109,.5);
+
+    transform:scale(1.15);
+
+}
+
+#secretHas:active{
+
+    transform:scale(.95);
+
+}
+/* HAS Gizli Mesaj Animasyonu */
+
+}
+#hasSecretModal{
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    background:rgba(0,0,0,.45);
+
+}
+/* Kalp Patlaması */
+
+.heart-burst{
+
+    position:fixed;
+
+    font-size:28px;
+
+    pointer-events:none;
+
+    z-index:99999;
+
+    animation:heartBurst 1.2s forwards;
+
+}
+
+@keyframes heartBurst{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(0,0) scale(.3);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(var(--x),var(--y)) scale(.2);
+
+    }
+
+}
+/* ===========================
+   HAS Easter Egg
+=========================== */
+
+.has-secret-modal{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+.has-secret-modal.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.has-secret-box{
+
+    width:min(90%,420px);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    text-align:center;
+
+    color:white;
+
+    transform:scale(.7);
+
+    transition:.35s;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.has-secret-modal.show .has-secret-box{
+
+    transform:scale(1);
+
+}
+
+.has-secret-box h2{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.has-secret-box p{
+
+    line-height:1.8;
+
+    margin:12px 0;
+
+}
+
+#closeHasSecret{
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px 28px;
+
+    background:#ff5c8a;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#closeHasSecret:hover{
+
+    transform:scale(1.05);
+
 }

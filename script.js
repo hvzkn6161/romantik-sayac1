@@ -685,3 +685,62 @@ if (heartBtn) {
     });
 
 }
+// ===========================
+// HAS Gizli Mesaj
+// ===========================
+
+const secretHas = document.getElementById("secretHas");
+const hasSecretModal = document.getElementById("hasSecretModal");
+const closeHasSecret = document.getElementById("closeHasSecret");
+
+let hasClickCount = 0;
+
+if(secretHas){
+
+    secretHas.addEventListener("click", function(){
+
+        hasClickCount++;
+
+        if(hasClickCount >= 5){
+            secretHas.style.transform = "scale(1.3)";
+            secretHas.style.textShadow = "0 0 30px #ff4d6d";
+
+            hasSecretModal.classList.add("show");
+            setTimeout(() => {
+
+    secretHas.style.transform = "";
+    secretHas.style.textShadow = "";
+
+},600);
+
+            hasClickCount = 0;
+
+        }
+
+    });
+
+}
+
+if(closeHasSecret){
+
+    closeHasSecret.addEventListener("click", function(){
+
+    hasSecretModal.classList.remove("show");
+
+});
+
+}
+
+if(hasSecretModal){
+
+    hasSecretModal.addEventListener("click", function(e){
+
+        if(e.target === hasSecretModal){
+
+            hasSecretModal.classList.remove("show");
+
+        }
+
+    });
+
+}
