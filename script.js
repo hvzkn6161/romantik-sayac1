@@ -59,9 +59,9 @@ items.forEach((item,index)=>{
 
 });
 
-        },1000);
+        },400);
 
-    },2500);
+    },2000);
 
 };
 
@@ -744,3 +744,14 @@ if(hasSecretModal){
     });
 
 }
+document.querySelectorAll("button, a").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        if (navigator.vibrate) {
+            navigator.vibrate(20);
+        }
+
+    });
+
+});
