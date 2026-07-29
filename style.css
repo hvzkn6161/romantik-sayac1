@@ -1958,17 +1958,25 @@ body{
 
 .stats-title{
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
     font-family:"Great Vibes",cursive;
 
     font-size:2.2rem;
 
     color:#fff;
 
-    text-align:center;
-
     margin-bottom:8px;
 
     text-shadow:0 0 20px rgba(255,105,180,.6);
+
+    white-space:nowrap;
 
 }
 
