@@ -80,9 +80,10 @@ body{
     font-weight:700;
     color:#fff;
     text-shadow:
-        0 2px 10px rgba(0,0,0,.25),
-        0 0 15px rgba(255,255,255,.5);
+        0 2px 8px rgba(0,0,0,.45),
+        0 0 20px rgba(255,105,180,.25);
     white-space:nowrap;
+    letter-spacing:3px;
 }
 
 .date{
@@ -2532,7 +2533,7 @@ body{
     background-size:200%;
 
     animation:
-        introLoad 2s forwards,
+        introLoad 5s forwards,
         introGlow 2s linear infinite;
 
 }
@@ -2550,5 +2551,28 @@ body{
     from{ background-position:0%; }
 
     to{ background-position:200%; }
+
+}
+.loading-text{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:rgba(0,0,0,.18);
+
+    backdrop-filter:blur(10px);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-shadow:0 2px 5px rgba(0,0,0,.5);
 
 }

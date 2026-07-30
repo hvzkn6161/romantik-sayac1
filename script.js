@@ -37,9 +37,39 @@ let previousValues = {
     seconds: ""
 };
 // Açılış ekranı
+const loadingText = document.getElementById("loadingText");
+
+const loadingMessages = [
+
+    "❤️ Anılar hazırlanıyor...",
+
+    "📷 Fotoğraflar yükleniyor...",
+
+    "💌 Mektuplar açılıyor...",
+
+    "🗺️ Aşk Haritası çiziliyor...",
+
+    "✨ Her şey hazır..."
+
+];
+
+let loadingIndex = 0;
+
+const loadingInterval = setInterval(() => {
+
+    loadingIndex++;
+
+    if (loadingIndex < loadingMessages.length) {
+
+        loadingText.textContent = loadingMessages[loadingIndex];
+
+    }
+
+}, 1000);
 window.onload = () => {
 
     setTimeout(() => {
+        clearInterval(loadingInterval);
 
         intro.style.opacity = "0";
 
@@ -59,9 +89,9 @@ items.forEach((item,index)=>{
 
 });
 
-        },400);
+        },600);
 
-    },2000);
+    },5000);
 
 };
 
