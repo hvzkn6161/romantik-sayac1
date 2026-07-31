@@ -2576,3 +2576,24 @@ body{
     text-shadow:0 2px 5px rgba(0,0,0,.5);
 
 }
+.music-note{
+    position: fixed;
+    pointer-events: none;
+    font-size: 22px;
+    animation: floatNote 2s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes floatNote{
+
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-120px) translateX(30px) rotate(25deg) scale(1.5);
+    }
+
+}

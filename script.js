@@ -164,6 +164,7 @@ openLetter.onclick = async function () {
     });
 
     letterModal.style.display = "flex";
+    startLetterTyping();
 
     await increaseStat("letters");
 
@@ -394,16 +395,54 @@ musicBtn.addEventListener("click", async function(){
         loadVisitCount();
 
         music.play();
+        startMusicNotes();
         musicBtn.innerHTML = "🔊";
 
     } else {
 
         music.pause();
+        stopMusicNotes();
         musicBtn.innerHTML = "🎵";
 
     }
 
 });
+let noteInterval = null;
+
+function startMusicNotes(){
+
+    if(noteInterval) return;
+
+    noteInterval = setInterval(() => {
+
+        const note = document.createElement("div");
+
+        note.className = "music-note";
+
+        const notes = ["♪","♫","♬","🎵"];
+
+        note.textContent = notes[Math.floor(Math.random()*notes.length)];
+
+        const rect = musicBtn.getBoundingClientRect();
+
+        note.style.left = (rect.left + rect.width/2) + "px";
+        note.style.top = (rect.top + 10) + "px";
+
+        document.body.appendChild(note);
+
+        setTimeout(() => note.remove(), 2000);
+
+    }, 500);
+
+}
+
+function stopMusicNotes(){
+
+    clearInterval(noteInterval);
+
+    noteInterval = null;
+
+}
 // Sakura Yaprakları
 
 const sakuraContainer = document.getElementById("sakura-container");
@@ -785,3 +824,36 @@ document.querySelectorAll("button, a").forEach(item => {
     });
 
 });
+async function startLetterTyping() {
+
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
+    const line3 = document.getElementById("line3");
+
+    const text1 = "Sen hayatıma girdiğin günden beri her günüm daha güzel.";
+    const text2 = "Seninle geçen her saniye benim için tarifsiz bir mutluluk.";
+    const text3 = "Seni çok seviyorum. ❤️";
+
+    line1.textContent = "";
+    line2.textContent = "";
+    line3.textContent = "";
+
+    await typeLine(line1, text1);
+    await sleep(500);
+
+    await typeLine(line2, text2);
+    await sleep(500);
+
+    await typeLine(line3, text3);
+}
+
+async function typeLine(element, text) {
+    for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await sleep(35);
+    }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
