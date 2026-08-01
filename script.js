@@ -30,6 +30,7 @@ const days = document.getElementById("days");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
+const secondsTogether = document.getElementById("secondsTogether");
 let previousValues = {
     days: "",
     hours: "",
@@ -111,6 +112,7 @@ function updateCounter(){
     const totalMinutes = Math.floor(diff / (1000 * 60));
 
     const totalSeconds = Math.floor(diff / 1000);
+    secondsTogether.textContent = totalSeconds.toLocaleString("tr-TR");
 
     const h = totalHours % 24;
     const m = totalMinutes % 60;
@@ -132,12 +134,6 @@ Object.entries(values).forEach(([key, value]) => {
     if (previousValues[key] != value) {
 
         element.textContent = value;
-
-        element.classList.remove("counter-pop");
-
-        void element.offsetWidth;
-
-        element.classList.add("counter-pop");
 
         previousValues[key] = value;
 
