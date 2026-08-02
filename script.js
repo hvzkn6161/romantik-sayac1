@@ -42,15 +42,15 @@ const loadingText = document.getElementById("loadingText");
 
 const loadingMessages = [
 
-    "❤️ Anılar hazırlanıyor...",
+    "❤️ Anılarımız hazırlanıyor...",
 
-    "📷 Fotoğraflar yükleniyor...",
+    "📷 En güzel anılar seçiliyor...",
 
-    "💌 Mektuplar açılıyor...",
+    "💌 Sana özel satırlar yazılıyor...",
 
-    "🗺️ Aşk Haritası çiziliyor...",
+    "🗺️ Aşk Haritamız oluşturuluyor...",
 
-    "✨ Her şey hazır..."
+    "✨ Son dokunuşlar yapılıyor..."
 
 ];
 
@@ -67,10 +67,61 @@ const loadingInterval = setInterval(() => {
     }
 
 }, 1000);
+function typeWriter(element, text, speed = 60){
+
+    element.textContent = "";
+
+    let i = 0;
+
+    const timer = setInterval(() => {
+
+        element.textContent += text.charAt(i);
+
+        i++;
+
+        if(i >= text.length){
+            clearInterval(timer);
+        }
+
+    }, speed);
+
+}
 window.onload = () => {
 
+    const introTitle = document.getElementById("introTitle");
+    const introSubtitle = document.getElementById("introSubtitle");
+
+    // Başlık
     setTimeout(() => {
+        introTitle.style.opacity = "1";
+
+        typeWriter(
+            introTitle,
+            "Sana küçük bir sürpriz hazırladım...",
+            80
+        );
+
+    },1000);
+
+    // Alt yazı
+    setTimeout(() => {
+
+        introSubtitle.style.opacity = "1";
+
+        typeWriter(
+            introSubtitle,
+            "Hazır mısın? ❤️",
+            90
+        );
+
+    },4500);
+
+    // Intro kapanışı
+    setTimeout(() => {
+
         clearInterval(loadingInterval);
+
+        loadingText.textContent = "❤️ Senin için hazırlandı...";
 
         intro.style.opacity = "0";
 
@@ -78,21 +129,22 @@ window.onload = () => {
 
             intro.style.display = "none";
             card.style.display = "block";
+
             const items = document.querySelectorAll(".fade-item");
 
-items.forEach((item,index)=>{
+            items.forEach((item,index)=>{
 
-    setTimeout(()=>{
+                setTimeout(()=>{
 
-        item.classList.add("show");
+                    item.classList.add("show");
 
-    },index*250);
+                },index*250);
 
-});
+            });
 
-        },600);
+        },1000);
 
-    },5000);
+    },11000);
 
 };
 

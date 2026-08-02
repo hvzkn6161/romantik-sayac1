@@ -47,13 +47,69 @@ body{
 }
 
 .heart{
-    font-size:60px;
-    animation:heart 1s infinite;
+
+    font-size:70px;
+
+    opacity:0;
+
+    transform:scale(.3);
+
+    animation:introHeart 1.2s forwards,
+              heart 1.2s infinite 1.2s;
+
 }
 
-@keyframes heart{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.2);}
+@keyframes introHeart{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.3);
+
+    }
+
+    60%{
+
+        opacity:1;
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    10%{
+        transform:scale(1.18);
+    }
+
+    18%{
+        transform:scale(1);
+    }
+
+    28%{
+        transform:scale(1.12);
+    }
+
+    36%{
+        transform:scale(1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
 }
 
 /* Ana Kart */
@@ -2627,4 +2683,28 @@ align-items: center;
     width:50px;
     height:50px;
     font-size:22px;
+}
+#introSubtitle{
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+#introTitle,
+#introSubtitle{
+
+    min-height:40px;
+
+}
+/* Intro başlangıç */
+
+#introTitle,
+#introSubtitle{
+    opacity:0;
+}
+
+#introSubtitle{
+    margin-top:15px;
 }
