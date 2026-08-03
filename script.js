@@ -62,89 +62,111 @@ const loadingInterval = setInterval(() => {
 
     if (loadingIndex < loadingMessages.length) {
 
-        loadingText.textContent = loadingMessages[loadingIndex];
+        loadingText.classList.add("loading-hide");
+
+        setTimeout(() => {
+
+            loadingText.textContent = loadingMessages[loadingIndex];
+
+            loadingText.classList.remove("loading-hide");
+            loadingText.classList.add("loading-show");
+
+        },250);
 
     }
 
-}, 1000);
+},1500);
 function typeWriter(element, text, speed = 60){
 
-    element.textContent = "";
+    return new Promise(resolve => {
 
-    let i = 0;
+        element.textContent = "";
 
-    const timer = setInterval(() => {
+        let i = 0;
 
-        element.textContent += text.charAt(i);
+        const timer = setInterval(() => {
 
-        i++;
+            element.textContent += text.charAt(i);
 
-        if(i >= text.length){
-            clearInterval(timer);
-        }
+            i++;
 
-    }, speed);
+            if(i >= text.length){
+
+                clearInterval(timer);
+
+                resolve();
+
+            }
+
+        }, speed);
+
+    });
 
 }
-window.onload = () => {
+window.onload = async () => {
+    function wait(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
     const introTitle = document.getElementById("introTitle");
     const introSubtitle = document.getElementById("introSubtitle");
 
     // Başlık
-    setTimeout(() => {
-        introTitle.style.opacity = "1";
+    await wait(1000);
 
-        typeWriter(
-            introTitle,
-            "Sana küçük bir sürpriz hazırladım...",
-            80
-        );
+introTitle.style.opacity = "1";
 
-    },1000);
+await typeWriter(
+    introTitle,
+    "Sana küçük bir sürpriz hazırladım...",
+    80
+);
 
     // Alt yazı
-    setTimeout(() => {
+    await wait(1500);
 
-        introSubtitle.style.opacity = "1";
+introSubtitle.style.opacity = "1";
 
-        typeWriter(
-            introSubtitle,
-            "Hazır mısın? ❤️",
-            90
-        );
-
-    },4500);
+await typeWriter(
+    introSubtitle,
+    "Hazır mısın? ❤️",
+    90
+);
+await wait(1200);
 
     // Intro kapanışı
-    setTimeout(() => {
+    await wait(2500);
 
-        clearInterval(loadingInterval);
+clearInterval(loadingInterval);
 
-        loadingText.textContent = "❤️ Senin için hazırlandı...";
+loadingText.classList.add("loading-hide");
 
-        intro.style.opacity = "0";
+await wait(300);
 
-        setTimeout(() => {
+loadingText.textContent = "❤️ Senin için hazırlandı...";
 
-            intro.style.display = "none";
-            card.style.display = "block";
+loadingText.classList.remove("loading-hide");
 
-            const items = document.querySelectorAll(".fade-item");
+await wait(800);
 
-            items.forEach((item,index)=>{
+intro.classList.add("hide");
 
-                setTimeout(()=>{
+await wait(600);
 
-                    item.classList.add("show");
+intro.style.display = "none";
+card.style.display = "block";
 
-                },index*250);
+const items = document.querySelectorAll(".fade-item");
 
-            });
+items.forEach((item,index)=>{
 
-        },1000);
+    setTimeout(()=>{
 
-    },11000);
+        item.classList.add("show");
+
+    },index*250);
+
+});
 
 };
 

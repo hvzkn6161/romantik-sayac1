@@ -2708,3 +2708,41 @@ align-items: center;
 #introSubtitle{
     margin-top:15px;
 }
+.loading-text{
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+}
+
+.loading-hide{
+
+    opacity:0;
+
+    transform:translateY(-8px);
+
+}
+
+.loading-show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+#intro{
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+
+}
+
+#intro.hide{
+
+    opacity:0;
+
+    transform:scale(1.03);
+
+}
