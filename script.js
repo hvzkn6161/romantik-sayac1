@@ -143,9 +143,14 @@ loadingText.classList.add("loading-hide");
 
 await wait(300);
 
+loadingText.classList.add("loading-hide");
+
+await wait(400);
+
 loadingText.textContent = "❤️ Senin için hazırlandı...";
 
 loadingText.classList.remove("loading-hide");
+
 
 await wait(800);
 
