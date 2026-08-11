@@ -932,3 +932,48 @@ async function typeLine(element, text) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+// =========================
+// WHATSAPP SÜRPRİZ POPUP
+// =========================
+
+const whatsappBtn = document.getElementById("whatsappBtn");
+const whatsappModal = document.getElementById("whatsappModal");
+const whatsappYes = document.getElementById("whatsappYes");
+const whatsappNo = document.getElementById("whatsappNo");
+
+if (whatsappBtn && whatsappModal) {
+
+    whatsappBtn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        whatsappModal.classList.add("show");
+
+    });
+
+}
+
+if (whatsappNo && whatsappModal) {
+
+    whatsappNo.addEventListener("click", function() {
+
+        whatsappModal.classList.remove("show");
+
+    });
+
+}
+
+if (whatsappYes && whatsappModal) {
+
+    whatsappYes.addEventListener("click", function() {
+
+        whatsappModal.classList.remove("show");
+
+        window.open(
+            "https://wa.me/905313535897?text=Seni%20seviyorum",
+            "_blank"
+        );
+
+    });
+
+}
